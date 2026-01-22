@@ -1,7 +1,7 @@
 name: "Books to Scrape testing framework"
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
