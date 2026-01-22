@@ -1,0 +1,18 @@
+name: "Books to Scrape testing framework"
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+    test:
+      runs-on: ubuntu-latest
+      container:
+        image: node:25
+      steps:
+        - uses: actions/checkout@v3
+          with:
+            node-version: 25
+        - run: npm ci
+        - run: npx playwright test
